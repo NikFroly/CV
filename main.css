@@ -1,0 +1,205 @@
+:root {
+  --color-black-500: #222;
+  --color-grey-900: #4d4d4d;
+  --color-grey-500: #e5e5e5;
+  --color-grey-400: #eaeaea;
+  --color-grey-300: #eee;
+  --color-white-500: #fff;
+}
+
+html,
+hr {
+  color: var(--color-black-500);
+}
+html {
+  font: 14px/1.2 Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+}
+body[data-view="CV"] .main_greeting,
+body[data-view="CV"] .main_message,
+body[data-view="CV"] .main_signoff,
+body[data-view="CL"] .aside_exp,
+body[data-view="CL"] .aside_info,
+body[data-view="CL"] .main_summary,
+body[data-view="CL"] .main_experience,
+body[data-view="CL"] .main_education {
+  display: none;
+}
+body > *:not(#toggle) {
+  height: calc(100vh - 120px);
+  padding: 60px 30px;
+}
+
+#toggle {
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 80px;
+  height: 40px;
+}
+#toggle:hover .slideArea,
+input[name="toggle"]:focus + .slideArea {
+  opacity: 1;
+}
+input[name="toggle"] {
+  opacity: 0;
+}
+input[name="toggle"]:focus + .slideArea {
+  border-color: var(--color-black-500);
+}
+input[name="toggle"]:checked + .slideArea > .slider {
+  transform: translateX(40px);
+}
+.slideArea {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-grey-500);
+  border: 2px solid transparent;
+  border-radius: 25px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slideArea::before,
+.slideArea::after {
+  position: absolute;
+  top: 12px;
+}
+.slideArea::before {
+  content: "CV";
+  left: -25px;
+}
+.slideArea::after {
+  content: "CL";
+  right: -25px;
+}
+.slider {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-black-500);
+  transition: transform 1s;
+}
+
+aside,
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside {
+  width: 34vw;
+  --size: 246px;
+  background:
+    repeating-conic-gradient(
+      from 30deg,
+      transparent 0 120deg,
+      var(--color-grey-300) 0 50%
+    ) 
+    calc(var(--size)/2)
+    calc(var(--size)*tan(30deg)/2),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--color-grey-500) 0 60deg,
+      var(--color-grey-400) 0 120deg,
+      var(--color-grey-300) 0 50%
+    );
+  background-size: var(--size) calc(var(--size)*tan(30deg));
+  border-right: 1px inset var(--color-black-500);
+}
+aside > *:not(:last-child) {
+  text-align: center;
+}
+.title_name {
+  letter-spacing: 1px;
+  border: 8px solid;
+  padding: 10px;
+  margin: 0;
+}
+.title_position {
+  letter-spacing: 5px;
+}
+.exp_tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.exp_tags > span {
+  background: var(--color-black-500);
+  color: var(--color-white-500);
+  padding: 6px;
+  border-radius: 6px;
+  margin: 6px;
+}
+.exp_tags > br {
+  flex-basis: 100%;
+}
+.aside_contact > * {
+  display: flex;
+}
+.aside_contact > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+.aside_contact img {
+  width: 32px;
+}
+.aside_contact a {
+  margin: auto;
+  margin-left: 10px;
+  color: unset;
+  text-decoration: none;
+}
+
+main {
+  width: 66vw;
+}
+
+.section_title {
+  font-weight: bold;
+  font-size: 16px;
+}
+.section_body {
+  text-align: justify;
+}
+.item_title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.left_subhead,
+.left_subhead > a {
+  color: var(--color-grey-900);
+}
+.left_subhead {
+  font-size: smaller;
+}
+.left_subhead > a {
+  text-decoration: none;
+}
+.item_body {
+  margin: 15px 0;
+}
+.main_education .item_body {
+  letter-spacing: -0.03px;
+}
+
+.main_signoff {
+  align-self: end;
+}
+.sign {
+  stroke: var(--color-black-500);
+  stroke-width: 6px;
+  stroke-linecap: square;
+  width: 45px;
+  float: right;
+}
