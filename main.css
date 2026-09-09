@@ -22,7 +22,7 @@ body {
 body[data-view="CV"] .main_greeting,
 body[data-view="CV"] .main_message,
 body[data-view="CV"] .main_signoff,
-body[data-view="CL"] .aside_exp,
+body[data-view="CL"] .aside_skills,
 body[data-view="CL"] .aside_info,
 body[data-view="CL"] .main_summary,
 body[data-view="CL"] .main_experience,
@@ -129,19 +129,19 @@ aside > *:not(:last-child) {
 .title_position {
   letter-spacing: 5px;
 }
-.exp_tags {
+.skills_tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.exp_tags > span {
+.skills_tags > span {
   background: var(--color-black-500);
   color: var(--color-white-500);
   padding: 6px;
   border-radius: 6px;
   margin: 6px;
 }
-.exp_tags > br {
+.skills_tags > br {
   flex-basis: 100%;
 }
 .aside_contact > * {
