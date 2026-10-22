@@ -193,6 +193,10 @@ main {
 .main_education .item_body {
   letter-spacing: -0.03px;
 }
+.main_education .item_body a {
+  text-decoration: none;
+  filter: brightness(0);
+}
 
 .main_signoff {
   align-self: end;
