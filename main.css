@@ -191,11 +191,14 @@ main {
   margin: 12px 0;
 }
 .main_education .item_body {
-  letter-spacing: -0.03px;
+  letter-spacing: -0.3px;
 }
 .main_education .item_body a {
   text-decoration: none;
   filter: brightness(0);
+}
+.main_education .body_item:last-child .item_body {
+  margin-bottom: 0;
 }
 
 .main_signoff {
