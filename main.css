@@ -14,6 +14,15 @@ hr {
 html {
   font: 14px/1.2 Arial, sans-serif;
 }
+a {
+  color: unset;
+  text-decoration: none;
+}
+a.embeddedLink::after {
+  content: "\1F517";
+  filter: brightness(0);
+  margin-right: -3px;
+}
 
 body {
   margin: 0;
@@ -156,8 +165,6 @@ aside > *:not(:last-child) {
 .aside_contact a {
   margin: auto;
   margin-left: 10px;
-  color: unset;
-  text-decoration: none;
 }
 
 main {
@@ -184,18 +191,11 @@ main {
 .left_subhead {
   font-size: smaller;
 }
-.left_subhead > a {
-  text-decoration: none;
-}
 .item_body {
   margin: 12px 0;
 }
 .main_education .item_body {
   letter-spacing: -0.3px;
-}
-.main_education .item_body a {
-  text-decoration: none;
-  filter: brightness(0);
 }
 .main_education .body_item:last-child .item_body {
   margin-bottom: 0;
